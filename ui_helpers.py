@@ -145,22 +145,51 @@ def inject_theme():
         .stNumberInput input {
             border-radius: 10px !important;
         }
+
+        /* Buttons - text lives inside a stMarkdownContainer/<p>, which the
+           readability rule above darkens. These button-scoped rules are more
+           specific, so they win and keep button text on-brand and legible
+           regardless of button background. Default/secondary buttons get an
+           outlined look; primary buttons get a solid teal fill. */
         .stButton > button {
             border-radius: 10px !important;
             font-weight: 600 !important;
-            transition: transform 0.1s ease, box-shadow 0.15s ease !important;
+            background-color: #FFFFFF !important;
+            border: 1.5px solid var(--brand-teal) !important;
+            transition: transform 0.1s ease, box-shadow 0.15s ease, background-color 0.15s ease !important;
+        }
+        .stButton > button,
+        .stButton > button p,
+        .stButton > button span,
+        .stButton > button div {
+            color: var(--brand-teal-d) !important;
         }
         .stButton > button:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(14, 124, 123, 0.25);
+            background-color: rgba(14, 124, 123, 0.08) !important;
+            border-color: var(--brand-teal-d) !important;
+            box-shadow: 0 4px 12px rgba(14, 124, 123, 0.18);
+        }
+        .stButton > button:disabled,
+        .stButton > button:disabled * {
+            color: #A6ADB6 !important;
+            border-color: var(--brand-line) !important;
+            background-color: #F6F7F5 !important;
         }
         .stButton > button[kind="primary"] {
             background-color: var(--brand-teal) !important;
             border-color: var(--brand-teal) !important;
         }
+        .stButton > button[kind="primary"],
+        .stButton > button[kind="primary"] p,
+        .stButton > button[kind="primary"] span,
+        .stButton > button[kind="primary"] div {
+            color: #FFFFFF !important;
+        }
         .stButton > button[kind="primary"]:hover {
             background-color: var(--brand-teal-d) !important;
             border-color: var(--brand-teal-d) !important;
+            box-shadow: 0 4px 12px rgba(14, 124, 123, 0.32);
         }
         hr, [data-testid="stDivider"] { border-color: var(--brand-line) !important; }
 
