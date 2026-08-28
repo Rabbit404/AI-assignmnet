@@ -1,7 +1,5 @@
 # ShopNest — E-commerce Recommendation Prototype
 
-A Streamlit storefront demo with three recommendation engines — content-based,
-collaborative filtering, and hybrid — built from `kz.csv` purchase data.
 
 ## Run it
 
@@ -43,7 +41,7 @@ per session.
 
 ```
 app.py                              # Storefront + recommendation comparison
-pages/1_🎯_Recommend_For_User.py     # Random user + personalized recs
+pages/Recommend_For_User.py     # Random user + personalized recs
 recommender.py                      # Model building & recommendation logic
 ui_helpers.py                       # Theme + product card component
 data/kz.csv                         # Purchase data

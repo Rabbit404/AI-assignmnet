@@ -1,7 +1,5 @@
 import streamlit as st
 
-# ---- category -> icon (no product images in the dataset, so we use a
-# consistent glyph per top-level category as a lightweight visual anchor) ----
 CATEGORY_ICONS = {
     "electronics": "📱",
     "computers": "💻",
